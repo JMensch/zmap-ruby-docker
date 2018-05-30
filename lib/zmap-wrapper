@@ -1,0 +1,13 @@
+#!/bin/sh
+# https://github.com/DominikTo/zmap-docker/blob/master/src/zmap-wrapper
+
+##
+# Make sure that MAC address of our gateway is in the arp cache.
+##
+GATEWAY_IP=$(ip route | grep default | awk {'print $3'})
+GATEWAY_MAC=$(arping -c1 -r $GATEWAY_IP)
+
+##
+# Run zmap
+#
+zmap -G $GATEWAY_MAC ${1+"$@"}
