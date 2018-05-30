@@ -6,5 +6,3 @@ RUN apt-get update && apt-get install -y \
   zmap
 
 ADD ./lib/zmap-wrapper /usr/local/bin/
-
-ENTRYPOINT ["zmap-wrapper"]
