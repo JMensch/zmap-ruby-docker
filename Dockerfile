@@ -6,3 +6,4 @@ RUN apt-get update && apt-get install -y \
   zmap
 
 ADD ./lib/zmap-wrapper /usr/local/bin/
+RUN chmod +x /usr/local/bin/zmap-wrapper
