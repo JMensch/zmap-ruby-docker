@@ -1,9 +1,10 @@
-FROM xqdocker/ubuntu-ruby:2.4
+FROM ubuntu:latest 
 
 RUN apt-get update && apt-get install -y \
   iproute2 \
   arping \
-  zmap
+  zmap \
+  ruby-full
 
 ADD ./lib/zmap-wrapper /usr/local/bin/
 RUN chmod +x /usr/local/bin/zmap-wrapper
